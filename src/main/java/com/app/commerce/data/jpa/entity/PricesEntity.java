@@ -25,8 +25,7 @@ public class PricesEntity {
     @Id
     @Column(nullable = false)
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long priceListID;
+    Long priceListId;
 
     @Column(nullable = false)
     private OffsetDateTime startDate;

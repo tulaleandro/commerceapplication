@@ -19,4 +19,5 @@ public class PricesResponse {
     private OffsetDateTime startDate;
     private OffsetDateTime endDate;
     private Long priority;
+    private Float price;
 }

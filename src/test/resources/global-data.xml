@@ -2,10 +2,10 @@
     <Brands id="0" name="RICKY ZARCANI"/>
     <Brands id="1" name="ZARA"/>
 
-    <Prices brand_id="1" start_date="2020-06-14 00:00:00 +0000" end_date="2020-12-31 23:59:59 +0000" currency="EUR" product_id="35455" priority="0" price="35.50"/>
-    <Prices brand_id="1" start_date="2020-06-14 00:00:00 +0000" end_date="2020-12-31 23:59:59 +0000" currency="EUR" product_id="35455" priority="1" price="35.50"/>
-    <Prices brand_id="1" start_date="2020-06-14 15:00:00 +0000" end_date="2020-06-14 18:30:00 +0000" currency="EUR" product_id="35455" priority="1" price="25.45"/>
-    <Prices brand_id="1" start_date="2020-06-15 00:00:00 +0000" end_date="2020-06-15 11:00:00 +0000" currency="EUR" product_id="35455" priority="1" price="30.50"/>
-    <Prices brand_id="1" start_date="2020-06-15 16:00:00 +0000" end_date="2020-12-31 23:59:59 +0000" currency="EUR" product_id="35455" priority="1" price="38.95"/>
+    <Prices price_list_id="1" brand_id="1" start_date="2020-06-14 00:00:00 +0000" end_date="2020-12-31 23:59:59 +0000" currency="EUR" product_id="35455" priority="0" price="35.50"/>
+    <Prices price_list_id="2" brand_id="1" start_date="2020-06-14 00:00:00 +0000" end_date="2020-12-31 23:59:59 +0000" currency="EUR" product_id="35455" priority="1" price="35.50"/>
+    <Prices price_list_id="3" brand_id="1" start_date="2020-06-14 15:00:00 +0000" end_date="2020-06-14 18:30:00 +0000" currency="EUR" product_id="35455" priority="1" price="25.45"/>
+    <Prices price_list_id="4" brand_id="1" start_date="2020-06-15 00:00:00 +0000" end_date="2020-06-15 11:00:00 +0000" currency="EUR" product_id="35455" priority="1" price="30.50"/>
+    <Prices price_list_id="5" brand_id="1" start_date="2020-06-15 16:00:00 +0000" end_date="2020-12-31 23:59:59 +0000" currency="EUR" product_id="35455" priority="1" price="38.95"/>
 
 </dataset>

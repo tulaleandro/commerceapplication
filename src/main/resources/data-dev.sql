@@ -1,0 +1,2 @@
+insert into brands(id, name) values (1, 'ZARA')
+insert into prices(price_list_id, start_date, end_date, currency, product_id, priority, price, brand_id) values (1, '2020-06-14T11:00:00.000Z', '2020-06-18T11:00:00.000Z', 'EUR', 3455, 1, 34.50, 1)

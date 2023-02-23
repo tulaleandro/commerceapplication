@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static com.app.commerce.service.Mapper.*;
 import static com.app.commerce.service.PriceServices.PriceService;
 import static com.app.commerce.service.PriceServices.PriceServiceImpl;
 
@@ -20,12 +21,16 @@ public class PricesAutoconfiguration {
     @NonFinal
     @Accessors(fluent = true)
     public static class PriceServiceAutoConfiguration {
-
         PriceRepository priceRepository;
         @Bean
         @ConditionalOnMissingBean
+        public CustomMapper customMapper() {
+            return new CustomMapper();
+        }
+        @Bean
+        @ConditionalOnMissingBean
         public PriceService priceServices() {
-            return new PriceServiceImpl(priceRepository());
+            return new PriceServiceImpl(priceRepository(), customMapper());
         }
 
     }
