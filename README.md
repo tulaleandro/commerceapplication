@@ -4,6 +4,12 @@
 
 - [@tulaleandro](https://github.com/tulaleandro)
 
+## Installation
+
+To run the project use the profile dev. This one will allow spring boot to execute the schema.sql and data.sql file. In 
+those files we have pre define data to test the API.
+The project will be able to handle generic exception (check controller advice class)
+
 ## Usage/Examples
 
 ```curl

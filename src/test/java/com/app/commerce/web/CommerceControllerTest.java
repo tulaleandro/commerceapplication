@@ -1,12 +1,15 @@
 package com.app.commerce.web;
 
+import com.app.commerce.exceptions.CustomControllerAdvice;
 import com.app.commerce.web.model.PricesResponse;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -20,10 +23,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest({CommerceController.class})
 public class CommerceControllerTest {
-    @Autowired
     MockMvc mockMvc;
     @MockBean
     PriceService priceService;
+
+    @Autowired
+    CommerceController commerceController;
+
+    @Autowired
+    CustomControllerAdvice customControllerAdvice;
+    @BeforeEach
+    void init() {
+        mockMvc = MockMvcBuilders.standaloneSetup(commerceController)
+                .setControllerAdvice(customControllerAdvice)
+                .build();
+
+    }
     @Test
     void shouldReturnOKEmptyResult() throws Exception {
 
@@ -60,6 +75,17 @@ public class CommerceControllerTest {
                 .andExpect(jsonPath("$.[0].brandId").value("1"))
                 .andExpect(jsonPath("$.[0].startDate").isNotEmpty())
                 .andExpect(jsonPath("$.[0].endDate").isNotEmpty())
+                .andReturn();
+
+    }
+
+    @Test
+    void shouldReturnBadRequestDueInvalidInputParam() throws Exception {
+
+        mockMvc.perform(get("/prices")
+                        .param("brand", "ZARA")
+                        .param("productId", "3455"))
+                .andExpect(status().isBadRequest())
                 .andReturn();
 
     }
